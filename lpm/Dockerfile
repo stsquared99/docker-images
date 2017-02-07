@@ -1,3 +1,3 @@
 FROM library/ubuntu:xenial
 
-RUN apt-get -y update && apt-get install -y sshpass
+RUN apt-get -y update && apt-get install -y rsync sshpass
