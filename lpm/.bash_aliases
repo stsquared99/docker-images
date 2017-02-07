@@ -1,0 +1,5 @@
+alias cdl="cd /opt/dev/projects/lpm"
+alias cdp="cd /opt/dev/projects/lpm/packages"
+alias cds="cd /opt/dev/projects/lpm/systems"
+alias di="./packages/domain_install.sh"
+alias vr="./packages/vm_remake.sh"
