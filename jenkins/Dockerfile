@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.73.2
+FROM jenkins/jenkins:2.73.3
 
 COPY --chown=jenkins:jenkins jenkins_home /var/jenkins_home
 
