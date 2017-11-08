@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.15">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers/>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.41">
+  <script>
+    podTemplate(label: &apos;mypod&apos;, containers: [
+      containerTemplate(name: &apos;jnlp&apos;, image: &apos;jenkins/jnlp-slave&apos;),
+    ]) {
+      node(&apos;mypod&apos;) {
+        stage(&apos;Run shell&apos;) {
+          sh &apos;echo hello world&apos;
+        }
+      }
+    }
+  </script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
