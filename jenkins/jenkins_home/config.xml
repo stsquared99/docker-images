@@ -24,7 +24,7 @@
       <connectTimeout>0</connectTimeout>
       <containerCap>1000000</containerCap>
       <defaultsProviderTemplate></defaultsProviderTemplate>
-      <jenkinsUrl>http://JENKINS_PORT_8080_TCP_ADDR:8080/</jenkinsUrl>
+      <jenkinsUrl>http://CONTAINER_IP:8080/</jenkinsUrl>
       <maxRequestsPerHost>32</maxRequestsPerHost>
       <name>kubernetes</name>
       <namespace>default</namespace>
