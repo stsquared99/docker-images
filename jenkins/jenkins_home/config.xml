@@ -21,17 +21,18 @@
   <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
   <clouds>
     <org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud plugin="kubernetes@1.1">
-      <name>kubernetes</name>
+      <connectTimeout>0</connectTimeout>
+      <containerCap>1000000</containerCap>
       <defaultsProviderTemplate></defaultsProviderTemplate>
-      <templates/>
+      <jenkinsUrl>http://JENKINS_PORT_8080_TCP_ADDR:8080/</jenkinsUrl>
+      <maxRequestsPerHost>32</maxRequestsPerHost>
+      <name>kubernetes</name>
+      <namespace>default</namespace>
+      <readTimeout>0</readTimeout>
+      <retentionTimeout>5</retentionTimeout>
       <serverUrl>https://kubernetes.kubernetes.rancher.internal:6443</serverUrl>
       <skipTlsVerify>false</skipTlsVerify>
-      <namespace>default</namespace>
-      <containerCap>1000000</containerCap>
-      <retentionTimeout>5</retentionTimeout>
-      <connectTimeout>0</connectTimeout>
-      <readTimeout>0</readTimeout>
-      <maxRequestsPerHost>32</maxRequestsPerHost>
+      <templates/>
     </org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud>
   </clouds>
   <quietPeriod>5</quietPeriod>
