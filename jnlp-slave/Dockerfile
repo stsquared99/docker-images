@@ -3,7 +3,7 @@ FROM jenkins/jnlp-slave:3.14-1
 USER root
 
 RUN apt-get update && \
-  apt-get install -qqy git nodejs-legacy
+  apt-get install -qqy bash git nodejs-legacy
 
 USER jenkins
 
