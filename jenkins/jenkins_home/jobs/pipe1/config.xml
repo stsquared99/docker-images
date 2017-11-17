@@ -20,7 +20,8 @@
         node(&apos;jnlp_pod&apos;) {
             stage(&apos;Run shell&apos;) {
                 sh &quot;&quot;&quot;
-                    find /var/jenkins
+                    cd /var/jenkins_data
+                    bash test.sh
                 &quot;&quot;&quot;
             }
         }
