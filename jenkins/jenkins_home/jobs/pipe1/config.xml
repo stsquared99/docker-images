@@ -10,14 +10,20 @@
   </properties>
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.41">
   <script>
-    podTemplate(label: &apos;mypod&apos;, containers: [
-      containerTemplate(name: &apos;jnlp&apos;, image: &apos;jenkins/jnlp-slave&apos;),
-    ]) {
-      node(&apos;mypod&apos;) {
-        stage(&apos;Run shell&apos;) {
-          sh &apos;echo hello world&apos;
+    podTemplate(
+        alwaysPullImage: true,
+        containers: [
+            containerTemplate(name: &apos;jnlp&apos;, image: env.JENKINS_IMAGE, workingDir: &apos;/home/jenkins&apos;),
+        ],
+        label: &apos;jnlp_pod&apos;
+    ) {
+        node(&apos;jnlp_pod&apos;) {
+            stage(&apos;Run shell&apos;) {
+                sh &quot;&quot;&quot;
+                    find /var/jenkins
+                &quot;&quot;&quot;
+            }
         }
-      }
     }
   </script>
     <sandbox>true</sandbox>
