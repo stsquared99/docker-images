@@ -11,3 +11,4 @@ RUN git config --global user.email "test@liferay.com" && \
   git config --global user.name "Test Test"
 
 RUN git clone https://github.com/dwyl/learn-tdd
+RUN git clone https://github.com/ingydotnet/git-subrepo
