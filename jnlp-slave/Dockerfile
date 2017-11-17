@@ -5,9 +5,13 @@ USER root
 RUN apt-get update && \
   apt-get install -qqy git nodejs-legacy
 
+RUN mkdir /slave_data
+
+RUN chown jenkins /slave_data
+
 USER jenkins
 
 RUN git config --global user.email "test@liferay.com" && \
   git config --global user.name "Test Test"
 
-RUN git clone https://github.com/dwyl/learn-tdd /home/jenkins/learn-tdd
+RUN git clone https://github.com/dwyl/learn-tdd /slave_data/learn-tdd
