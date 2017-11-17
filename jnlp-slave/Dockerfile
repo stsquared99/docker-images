@@ -3,7 +3,7 @@ FROM jenkins/jnlp-slave:3.14-1
 USER root
 
 RUN apt-get update && \
-  apt-get install -qqy bash git nodejs-legacy
+  apt-get install -qqy bash git nodejs npm
 
 RUN mkdir /var/jenkins_data
 
@@ -16,3 +16,5 @@ RUN git config --global user.email "test@liferay.com" && \
 
 RUN git clone https://github.com/dwyl/learn-tdd /var/jenkins_data/learn-tdd
 RUN git clone https://github.com/ingydotnet/git-subrepo /var/jenkins_data/git-subrepo
+
+ADD test.sh /var/jenkins_data
