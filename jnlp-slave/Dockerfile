@@ -5,9 +5,9 @@ USER root
 RUN apt-get update && \
   apt-get install -qqy bash git
 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 
-RUN bash ~/.nvm/nvm.sh install 8.9.1
+RUN apt-get install -qqy nodejs
 
 RUN mkdir /var/jenkins_data
 
